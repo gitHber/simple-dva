@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "name": "vuepress-blog",
+  "name": "simple-dva",
   "builds": [
     {
       "src": "package.json",
-      "use": "@now/simple-dva-demo",
+      "use": "@now/static-build",
       "config": { "distDir": "build" }
     }
   ]
