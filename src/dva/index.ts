@@ -95,8 +95,9 @@ function start(this: { store: Store; dispatch: Dispatch }) {
     combineReducers(reducers),
     compose(
       applyMiddleware(sagaMiddleware),
-      (window as any).__REDUX_DEVTOOLS_EXTENSION__ &&
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+      (window as any).__REDUX_DEVTOOLS_EXTENSION__
+        ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+        : (next) => next
     )
   );
   // 执行task任务，启动监听
