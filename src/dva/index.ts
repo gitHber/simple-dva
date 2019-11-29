@@ -97,7 +97,7 @@ function start(this: { store: Store; dispatch: Dispatch }) {
       applyMiddleware(sagaMiddleware),
       (window as any).__REDUX_DEVTOOLS_EXTENSION__
         ? (window as any).__REDUX_DEVTOOLS_EXTENSION__()
-        : (next) => next
+        : (next: () => any) => next
     )
   );
   // 执行task任务，启动监听
